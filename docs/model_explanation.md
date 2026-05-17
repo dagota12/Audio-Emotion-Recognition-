@@ -37,32 +37,30 @@ At this stage, the audio is converted into the numeric form the model can proces
 
 ## 4. Wav2Vec 2.0 Backbone
 
-The core model is **Wav2Vec 2.0**, a transformer-based speech model that was pretrained on large amounts of audio.
+The core model is **Wav2Vec 2.0**, a transformer-based speech model that was pretrained on large amounts of unlabeled audio data.
 
-It works well for this project because it can learn from the structure of voice itself:
+### Why Wav2Vec 2.0?
+It works exceptionally well for this project because it can learn directly from the structure of voice itself:
 
-- tone
-- pitch
-- rhythm
-- pauses
-- emphasis
+- **Tone**: The color and quality of the voice
+- **Pitch**: How high or low the voice sounds  
+- **Rhythm**: The timing and pacing of speech
+- **Pauses**: Silence and hesitation patterns
+- **Emphasis**: Stress on particular words or syllables
 
-Instead of manually engineering audio features, the model learns useful patterns directly from the waveform.
+**Key Advantage:** Instead of manually engineering audio features (like spectral components or MFCCs), the model learns useful patterns directly from raw waveforms through deep learning.
 
 ## 5. Emotion Classification Head
 
-The pretrained speech model is fine-tuned with a classification head for the emotion labels from RAVDESS.
+The pretrained speech model is fine-tuned with a specialized classification head for the emotion labels from RAVDESS.
 
-That means the model does not just understand speech in general. It also learns to map the speech patterns to one of the emotion classes:
+### Architecture Modification
+- **Pretrained Backbone:** Wav2Vec 2.0 (learns general speech patterns)
+- **Fine-tuning Head:** Added classification layer with 8 output neurons
+- **Output Classes:**
+  - Neutral, Calm, Happy, Sad, Angry, Fearful, Disgust, Surprised
 
-- neutral
-- calm
-- happy
-- sad
-- angry
-- fearful
-- disgust
-- surprised
+**Key Point:** The model does not just understand speech in general. Through fine-tuning on the RAVDESS dataset, it learns to map speech patterns to specific emotion classes. The backbone weights are slightly adjusted to specialize in emotion recognition.
 
 ## 6. Prediction Pipeline
 

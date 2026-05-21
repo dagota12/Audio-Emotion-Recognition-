@@ -31,16 +31,7 @@ classifier = pipeline(
 )
 
 def predict_emotion(audio_file: str):
-    """
-    Predict emotion labels from an audio file.
-
-    Steps:
-    1. Load audio using librosa
-    2. Resample audio to 16kHz
-    3. Run inference using Hugging Face pipeline
-    4. Print predicted emotions with confidence scores
-    """
-
+  
     # Load audio and convert sample rate to 16kHz
     speech, sample_rate = librosa.load(audio_file, sr=16000)
 

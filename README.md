@@ -98,6 +98,22 @@ This is an example of running the local prediction script and getting the output
 
 ## Repository Structure
 
+- `main.py` - Local inference script for emotion prediction
+- `emotion_recognition_self_train.py` - Model training script
+- `emotion_recognition_self_train.ipynb` - Jupyter notebook with full training pipeline
+- `requirements.txt` - Project dependencies
+- `docs/` - Documentation folder
+  - `model_explanation.md` - Detailed model workflow documentation
+- `group-members.txt` - Team members information
+
+## Key Features
+
+- **Transfer Learning**: Uses pretrained Wav2Vec 2.0 model from Hugging Face
+- **Clean Dataset**: RAVDESS dataset with 8 emotion classes
+- **GPU Optimized**: Memory-efficient training with gradient accumulation
+- **Local Inference**: Ready-to-use prediction script
+- **Strong Performance**: Achieved ~85% accuracy on test set
+
 - `emotion_recognition_self_train.ipynb` - full training notebook and experimentation log
 - `emotion_recognition_self_train.py` - notebook-exported Python version of the training workflow
 - `main.py` - local prediction script for the saved model

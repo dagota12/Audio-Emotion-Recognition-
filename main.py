@@ -2,7 +2,7 @@ import librosa
 import torch
 from transformers import AutoModelForAudioClassification, AutoFeatureExtractor, pipeline
 
-# 1. Path to your unzipped model folder
+# 1. Path to the unzipped model folder
 model_path = "./final_emotion_model_85pct"
 
 # 2. Load the local model and feature extractor
@@ -32,5 +32,5 @@ def predict_emotion(audio_file):
 
 if __name__ == "__main__":
     # Change this to whatever file you want to test locally
-    test_file = "neutral.wav" 
+    test_file = "happy-2.wav" 
     predict_emotion(test_file)

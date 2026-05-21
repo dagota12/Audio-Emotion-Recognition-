@@ -11,7 +11,7 @@ Original file is located at
 
 import os
 
-# Paste your token here (it should be the long string starting with KGAT_)
+# Insert a Kaggle token here (it should be the long string starting with KGAT_)
 os.environ['KAGGLE_API_TOKEN'] = '<use ur kaggle token for downloading>'
 
 # Now we run the download commands directly
@@ -151,7 +151,7 @@ sample = dataset["test"][0]
 audio_path = sample["audio"]
 
 # 2. Get the array directly from the sample (it's already at 16kHz!)
-# In your dataset, sample['audio'] is a dictionary: {'array': [...], 'path': '...', 'sampling_rate': 16000}
+            # sample['audio'] is a dictionary: {'array': [...], 'path': '...', 'sampling_rate': 16000}
 speech_array = sample["audio"]["array"]
 # 2. Use the pipeline to predict
 from transformers import pipeline
@@ -256,7 +256,7 @@ print(f"New 4-Second Accuracy: {(correct/total)*100}%")
 # Save the winning model
 trainer_long.save_model("./final_emotion_model_85pct")
 
-# Zip it so you can download it to your PC/Google Drive
+# Zip the model folder for local download or Drive transfer
 import shutil
 shutil.make_archive('voice_model_final', 'zip', 'final_emotion_model_85pct')
 
@@ -264,7 +264,7 @@ import librosa
 import torch
 from transformers import pipeline
 
-# 1. Path to your downloaded file
+# 1. Path to the downloaded file
 file_path = "angry.wav"
 
 # 2. Load and Resample to 16kHz
@@ -272,10 +272,10 @@ file_path = "angry.wav"
 audio_input, _ = librosa.load(file_path, sr=16000)
 
 # 3. Use the classifier you just trained
-# (Make sure 'classifier_long' is still in your memory)
+    # Ensure 'classifier_long' remains available in the current session
 result = classifier_long(audio_input)
 
-# 4. Show the results
+    # 4. Show the results
 print(f"--- Analysis for: {file_path} ---")
 print(f"Top Prediction: {result[0]['label']} ({result[0]['score']*100:.1f}%)")
 

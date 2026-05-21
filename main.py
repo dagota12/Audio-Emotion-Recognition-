@@ -6,9 +6,9 @@ from transformers import (
     pipeline,
 )
 
-# =========================================================
+
 # Local Emotion Recognition Model Configuration
-# =========================================================
+
 
 # Path to the locally saved / unzipped Hugging Face model
 MODEL_PATH = "./final_emotion_model_85pct"

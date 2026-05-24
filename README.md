@@ -158,7 +158,7 @@ This summary covers both the machine learning approach and the engineering work 
 | Group Members | ID |
 |---|---:|
 | Betelhem Tekle | UGR/25509/14 |
-| Tsedniya Frezewed | UGR/25321/14 |
+| Tsedeniya Frezewed | UGR/25321/14 |
 | Dagim Chernet | UGR/25436/14 |
 | Dagimawi Negusse | UGR/25591/14 |
 | Natnael Tilahun | UGR/25526/14 |
